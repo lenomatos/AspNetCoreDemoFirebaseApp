@@ -1,0 +1,41 @@
+﻿@model DemoFirebase.Infra.Models.Firestore.Estudante
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<table id="order-listing" class="table">
+    <thead>
+        <tr>
+            <th>
+                <div class="ml-2">Matricula</div>
+            </th>
+            <th>
+                <div class="ml-2">Nome</div>
+            </th>
+            <th>
+                <div class="ml-2">Status</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Matricula)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Status)
+                </td>
+            </tr>
+     </tbody>
+</table>

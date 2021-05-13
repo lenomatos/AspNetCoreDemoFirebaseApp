@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DemoFirebase.Infra.Models.Firestore.Estudante>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+@Html.ActionLink("Create", "Create")
+
+
+<table id="order-listing" class="table">
+    <thead>
+        <tr>
+            <th>
+                <div class="ml-2">Matricula</div>
+            </th>
+            <th>
+                <div class="ml-2">Nome</div>
+            </th>
+            <th>
+                <div class="ml-2">Status</div>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matricula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = item.Id })
+                    @Html.ActionLink("Details", "Details", new { Id = item.Id })
+                    @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
